@@ -7,7 +7,7 @@ import MyOrders from '../MyOrders/MyOrders.jsx'
 import NotFound from '../NotFound/NotFound.jsx'
 import SignIn from '../SignIn/SignIn.jsx'
 import Navbar from '../Components/Navbar/Navbar.jsx'
-
+import { ThemeContext } from '../../../Context/ThemeContext.jsx'
 
 const AppRoutes = () => {
   
@@ -23,7 +23,6 @@ const AppRoutes = () => {
   return routes
 }
 
-export const ThemeContext = createContext();
 const App = () => {
   
 const [theme, setTheme] = useState('light');

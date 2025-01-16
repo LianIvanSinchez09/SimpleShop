@@ -1,22 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ThemeContext } from '../../../../Context/ThemeContext';
 import ToggleButton from './ToggleButton';
+import { ThemeContext } from '../../../../Context/ThemeContext';
 
+const Navbar = (props) => {
 
-const Navbar = () => {
     const activeStyle = 'underline';
-    const [theme, setTheme] = useContext(ThemeContext);
-
-    const getNavbarColor = () => {
-        if (theme === 'gray') return '#f3f4f6';
-        if (theme === 'light') return '#ffffff'; 
-        return '#ffffff'; 
-    };
+    const [theme, setTheme] = useState(props.color);
 
     return (
         <nav
-            style={{ backgroundColor: getNavbarColor() }}
+            style={{ backgroundColor: theme }}
             className="top-0 flex justify-between items-center fixed gap-10 z-10 py-5 px-8 w-full text-sm font-light"
         >
             <ul className="flex items-center gap-3">
@@ -73,9 +67,12 @@ const Navbar = () => {
                 </li>
             </ul>
             <ul className="flex items-center gap-3">
-                <ToggleButton func={() => {
-                    setTheme(theme === 'gray' ? 'light' : 'gray')
-                }} />
+                <ToggleButton
+                    func={() => {
+                        // Cambia el estado del tema entre 'light' y 'gray'
+                        setTheme(theme === 'white' ? 'gray' : 'white');
+                    }}
+                />
                 <li>
                     <NavLink
                         to="/my-account"

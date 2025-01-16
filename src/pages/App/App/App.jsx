@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 import Home from '../Home/Home.jsx'
 import { useRoutes, BrowserRouter } from 'react-router-dom'
 import MyAccount from '../MyAccount/MyAccount.jsx'
@@ -7,7 +7,9 @@ import MyOrders from '../MyOrders/MyOrders.jsx'
 import NotFound from '../NotFound/NotFound.jsx'
 import SignIn from '../SignIn/SignIn.jsx'
 import Navbar from '../Components/Navbar/Navbar.jsx'
-import { ThemeContext } from '../../../Context/ThemeContext.jsx'
+import { ThemeContext ,ThemeContextProvider } from '../../../Context/ThemeContext.jsx'
+import { ShoppingCartContext, ShoppingCartProvider } from '../../../Context/ShoppingCartContext.jsx'
+
 
 const AppRoutes = () => {
   
@@ -25,15 +27,19 @@ const AppRoutes = () => {
 
 const App = () => {
   
-const [theme, setTheme] = useState('light');
+  //Contextos
+
+  // color por defecto de la app / color escogido por el usuario
+  const currTheme = useContext(ThemeContext)
 
   return (
     <>
       <BrowserRouter>
         <AppRoutes/>
-        <ThemeContext.Provider value={[theme, setTheme]}>
-          <Navbar color={theme}/>
-        </ThemeContext.Provider>
+          <ThemeContextProvider>
+              <Navbar color={currTheme}/>
+              <Home color={currTheme}/>
+          </ThemeContextProvider>
       </BrowserRouter>
     </>
   )

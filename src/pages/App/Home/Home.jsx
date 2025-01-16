@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Layout from '../Components/Navbar/Layout'
 import Card from '../Components/Navbar/Card'
+import { ShoppingCartContext, ShoppingCartProvider } from '../../../Context/ShoppingCartContext';
 
-const Home = () => {
+const Home = (props) => {
 
+  
   const [items, setItems] = useState(null);
 
   //useEffect sirve para sincronizar un componente con un sistema externo (por ejemplo esta api)
@@ -12,18 +14,19 @@ const Home = () => {
     .then(res=>res.json())
     .then(res => setItems(res))
   }, [])
-
+  
   return (
-    <div className='flex justify-center'>
-    <Layout>
-      {
-        items?.map((item) => {
-          return <Card key={item.id} data={item}/>
-        })
-      }
-    </Layout>
-    </div>
-  )
+    <ShoppingCartProvider>
+      <div className="flex justify-center">
+          <Layout>
+              {items?.map((item) => (
+                  <Card key={item.id}/>
+                ))}
+          </Layout>
+      </div>
+    </ShoppingCartProvider>
+);
+
 }
 
 export default Home

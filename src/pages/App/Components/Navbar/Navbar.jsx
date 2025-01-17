@@ -3,14 +3,14 @@ import { NavLink } from 'react-router-dom';
 import ToggleButton from './ToggleButton';
 import { ThemeContext } from '../../../../Context/ThemeContext';
 
-const Navbar = (props) => {
+const Navbar = () => {
 
     const activeStyle = 'underline';
-    const [theme, setTheme] = useState(props.color);
+    const navColor = useContext(ThemeContext)
 
     return (
         <nav
-            style={{ backgroundColor: theme }}
+            style={{ backgroundColor: navColor.theme }}
             className="top-0 flex justify-between items-center fixed gap-10 z-10 py-5 px-8 w-full text-sm font-light"
         >
             <ul className="flex items-center gap-3">
@@ -69,8 +69,8 @@ const Navbar = (props) => {
             <ul className="flex items-center gap-3">
                 <ToggleButton
                     func={() => {
-                        // Cambia el estado del tema entre 'light' y 'gray'
-                        setTheme(theme === 'white' ? 'gray' : 'white');
+                        let color = navColor.theme === 'white' ? 'gray' : 'white'                        
+                        navColor.setTheme(color);
                     }}
                 />
                 <li>
@@ -88,6 +88,9 @@ const Navbar = (props) => {
                     >
                         My orders
                     </NavLink>
+                </li>
+                <li>
+                    <p>{}</p>
                 </li>
             </ul>
         </nav>

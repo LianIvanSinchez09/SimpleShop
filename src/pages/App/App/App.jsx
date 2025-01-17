@@ -7,8 +7,8 @@ import MyOrders from '../MyOrders/MyOrders.jsx'
 import NotFound from '../NotFound/NotFound.jsx'
 import SignIn from '../SignIn/SignIn.jsx'
 import Navbar from '../Components/Navbar/Navbar.jsx'
-import { ThemeContext ,ThemeContextProvider } from '../../../Context/ThemeContext.jsx'
-import { ShoppingCartContext, ShoppingCartProvider } from '../../../Context/ShoppingCartContext.jsx'
+import { ThemeContext } from '../../../Context/ThemeContext.jsx'
+import { ShoppingCartContext } from '../../../Context/ShoppingCartContext.jsx'
 
 
 const AppRoutes = () => {
@@ -26,20 +26,13 @@ const AppRoutes = () => {
 }
 
 const App = () => {
-  
-  //Contextos
-
-  // color por defecto de la app / color escogido por el usuario
-  const currTheme = useContext(ThemeContext)
-
+    
   return (
     <>
       <BrowserRouter>
         <AppRoutes/>
-          <ThemeContextProvider>
-              <Navbar color={currTheme}/>
-              <Home color={currTheme}/>
-          </ThemeContextProvider>
+        <Navbar/>
+        <Home/>
       </BrowserRouter>
     </>
   )

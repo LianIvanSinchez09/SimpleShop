@@ -1,7 +1,9 @@
 import React, { useContext } from 'react'
 import App from './App/App'
-import { ShoppingCartContext, ShoppingCartProvider } from '../../Context/ShoppingCartContext'
+import { ShoppingCartProvider } from '../../Context/ShoppingCartContext'
 import { ThemeContext, ThemeContextProvider } from '../../Context/ThemeContext'
+import { miniCardProvider } from '../../Context/MiniCardContext'
+
 
 function Home() {
 
@@ -11,7 +13,9 @@ function Home() {
     <div>
       <ThemeContextProvider>
         <ShoppingCartProvider>
-          <App theme={theme}/>
+          <miniCardProvider>
+            <App theme={theme}/>
+          </miniCardProvider>
         </ShoppingCartProvider>
       </ThemeContextProvider>
     </div>

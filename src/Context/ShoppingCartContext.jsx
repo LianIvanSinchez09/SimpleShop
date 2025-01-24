@@ -4,10 +4,10 @@ export const ShoppingCartContext = createContext()
 
 export const ShoppingCartProvider = ({children}) => {
     
-    const [count, setCount] = useState(0) 
+    const [shopItems, setShopItems] = useState([]) 
 
     return(
-        <ShoppingCartContext.Provider value={{count, setCount}}>
+        <ShoppingCartContext.Provider value={{shopItems, setShopItems}}>
             {children}
         </ShoppingCartContext.Provider>
     )

@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Layout from '../Components/Navbar/Layout'
 import Card from '../Components/Navbar/Card'
-import { ShoppingCartContext, ShoppingCartProvider } from '../../../Context/ShoppingCartContext';
 
-const Home = (props) => {
+const Home = () => {
 
   
   const [items, setItems] = useState(null);

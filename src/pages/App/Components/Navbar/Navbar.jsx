@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import ToggleButton from './ToggleButton';
 import { ThemeContext } from '../../../../Context/ThemeContext';
+import Dropdown from './Dropdown';
 
 const Navbar = () => {
 
@@ -73,6 +74,7 @@ const Navbar = () => {
                         navColor.setTheme(color);
                     }}
                 />
+                <Dropdown/>
                 <li>
                     <NavLink
                         to="/my-account"

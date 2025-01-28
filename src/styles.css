@@ -7,8 +7,8 @@
     display: flex;
     flex-direction: column;
 }
-.dropdown .content{
-    /* display: none; */
+.content{
+    display: none;
     background-color: rgb(241, 220, 220);
     position: absolute;
     min-width: 100px;
@@ -19,12 +19,11 @@
     text-decoration: none;
     padding: 10px 15px;
 }
-/* .dropdown:hover .content{
+/* 
+.dropdown:hover .content {
     display: block;
 }
 
-.content:hover .content{
+.content:hover{
     display: block;
 } */
-
-

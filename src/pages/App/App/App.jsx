@@ -1,4 +1,3 @@
-import { createContext, useContext, useState } from 'react'
 import Home from '../Home/Home.jsx'
 import { useRoutes, BrowserRouter } from 'react-router-dom'
 import MyAccount from '../MyAccount/MyAccount.jsx'
@@ -7,8 +6,16 @@ import MyOrders from '../MyOrders/MyOrders.jsx'
 import NotFound from '../NotFound/NotFound.jsx'
 import SignIn from '../SignIn/SignIn.jsx'
 import Navbar from '../Components/Navbar/Navbar.jsx'
-import { ThemeContext } from '../../../Context/ThemeContext.jsx'
-import { ShoppingCartContext } from '../../../Context/ShoppingCartContext.jsx'
+
+/** TODOs
+ * Wishlist
+ *  Busqueda Avanzada
+ * Carrito persistente
+ * Filtros de busqueda (por talle, por peso...etc)
+ * auth
+ * modo oscuro (DONE)
+ * Chat en vivo con bot
+ */
 
 
 const AppRoutes = () => {

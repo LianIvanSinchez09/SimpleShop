@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react'
 
 export const miniCardContext = createContext([])
 
-export const miniCardProvider = ({children}) => {
+export const MiniCardProvider = ({children}) => {
     
     const [miniCard, setminiCard] = useState(null) 
 

@@ -6,7 +6,9 @@ const MiniCard = (props) => {
   
 
   return (
-        <p>{props.data.title}</p>
+    <div className='border'>
+      <p>{props.data.title} - $ {props.data.price}</p>
+    </div>
   )
 }
 

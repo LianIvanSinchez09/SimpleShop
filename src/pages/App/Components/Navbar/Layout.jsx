@@ -2,7 +2,7 @@ import React from 'react'
 
 const Layout= ( {children} ) => {
   return (
-    <div className='mt-20 grid grid-cols-3 grid-rows-1 gap-10'>
+    <div className='mt-20 gap-10 grid grid-cols-3'>
       {children}
     </div>
   )

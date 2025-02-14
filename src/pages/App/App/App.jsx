@@ -10,10 +10,11 @@ import Navbar from '../Components/Navbar/Navbar.jsx'
 /** TODOs
  * Wishlist
  *  Busqueda Avanzada
- * Carrito persistente
+ * Carrito persistente (50%)
  * Filtros de busqueda (por talle, por peso...etc)
  * auth
  * modo oscuro (DONE)
+ * conexion con API (done)
  * Chat en vivo con bot
  */
 

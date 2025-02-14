@@ -19,11 +19,13 @@
     text-decoration: none;
     padding: 10px 15px;
 }
-/* 
-.dropdown:hover .content {
-    display: block;
-}
 
-.content:hover{
-    display: block;
-} */
+
+.card {
+    max-width: 35%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
